@@ -1,0 +1,9 @@
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+
+@xset s off
+@xset -dpms
+@xset s noblank
+@unclutter
+
+@chromium-browser --noerrdialogs --kiosk {{ chromium_tabs }}

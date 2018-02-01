@@ -1,0 +1,22 @@
+- name: apt-get libgcrypt11
+  apt:
+    name: libgcrypt11-dev
+    state: present
+  become: yes
+
+- name: apt-get chromium-browser
+  apt:
+    name: chromium-browser
+    state: present
+
+- name: Download chromium-codecs-ffmpeg-extra
+  get_url:
+    url: http://launchpadlibrarian.net/218525711/chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.14.04.1.1097_armhf.deb
+    dest: /tmp/chromium-codecs-ffmpeg-extra.deb
+    mode: 0440
+
+- name: Install chromium-codecs-ffmpeg-extra
+  apt:
+    deb: "/tmp/chromium-codecs-ffmpeg-extra.deb"
+    state: present
+  become: yes

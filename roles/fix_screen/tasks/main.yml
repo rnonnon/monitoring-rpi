@@ -1,0 +1,6 @@
+- name: remove black border from screen
+  lineinfile:
+    path: /boot/config.txt
+    regexp: '#disable_overscan=1'
+    line: 'disable_overscan=1'
+  become: yes

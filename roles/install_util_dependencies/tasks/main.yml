@@ -1,0 +1,12 @@
+- name: Install deps
+  block:
+    - name: Install x11-xserver-utils
+      apt:
+        name: x11-xserver-utils
+    - name: Install ttf-mscorefonts-installer
+      apt:
+        name: ttf-mscorefonts-installer
+    - name: Install unclutter
+      apt:
+        name: unclutter
+  become: yes

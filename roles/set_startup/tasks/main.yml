@@ -1,0 +1,7 @@
+- name: copy default lxde_autostart
+  template:
+    src: lxde_autostart
+    dest: "{{ lxde_autostart_path }}"
+    owner: "{{ pi_user }}"
+    group: "{{ pi_user }}"
+    mode: 0644

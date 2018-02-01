@@ -1,0 +1,14 @@
+- hosts: all
+  gather_facts: no
+  remote_user: "{{ pi_user }}"
+  tasks:
+    - include_role:
+        name: fix_screen
+    - include_role:
+        name: local
+    - include_role:
+        name: install_util_dependencies
+    - include_role:
+        name: install_chromium
+    - include_role:
+        name: set_startup

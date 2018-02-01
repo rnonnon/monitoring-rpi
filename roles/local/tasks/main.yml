@@ -1,0 +1,9 @@
+- name: set keyboard Layout
+  copy:
+    src: xsessionrc
+    dest: ~/.xsessionrc
+
+- name: set timezone to Europe/Paris
+  timezone:
+    name: Europe/Paris
+  become: yes
